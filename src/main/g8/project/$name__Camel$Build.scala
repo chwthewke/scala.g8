@@ -5,7 +5,7 @@ import com.typesafe.sbteclipse.core.EclipsePlugin._
 import scalariform.formatter.preferences._
 import sbtbuildinfo.Plugin._
 
-object $name;format="camel"$Build extends Build {
+object $name;format="Camel"$Build extends Build {
 
   object Dependencies {
     val scalazVersion = "7.1.0-M6"
