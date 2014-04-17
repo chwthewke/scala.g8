@@ -36,7 +36,7 @@ object $name;format="Camel"$Build extends Build {
       $name;format="camel"$BuildInfoSettings ++
       Seq(
         name := "$name;format="norm"$",
-        organization := "net.chwthewke",
+        organization := "$organisation$",
         scalaVersion := "$scalaVersion$",
         libraryDependencies ++= Seq(
           Dependencies.scalatest,
