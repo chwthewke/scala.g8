@@ -69,7 +69,8 @@ object $name;format="Camel"$Build extends Build {
       Seq(
         name := "$module;format="norm"$",
         mainClass := Some("$package$.Main"),
-        initialCommands := "import $package$"
+        initialCommands := "import $package$",
+        buildInfoObject := "$module;format="camel"$BuildInfo"
       )
   )
 }
