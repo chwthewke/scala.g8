@@ -56,9 +56,18 @@ object $name;format="Camel"$Build extends Build {
   lazy val $name;format="camel"$ = Project(
     id = "$name;format="norm"$",
     base = file( "." ),
+    settings = Project.defaultSettings ++
+      Seq( name := "$name;format="norm"$" )
+  ).aggregate(
+    $module;format="camel"$
+  )
+
+  lazy val $module;format="camel"$ = Project(
+    id = "$module;format="norm"$",
+    base = file( "$module;format="norm"$" ),
     settings = $name;format="camel"$Settings ++
       Seq(
-        name := "$name;format="norm"$",
+        name := "$module;format="norm"$",
         mainClass := Some("$package$.Main"),
         initialCommands := "import $package$"
       )
