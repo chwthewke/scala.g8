@@ -24,7 +24,7 @@ object $name;format="Camel"$Build extends Build {
   lazy val $name;format="camel"$BuildInfoSettings = buildInfoSettings ++ Seq(
     sourceGenerators in Compile <+= buildInfo,
     buildInfoKeys := Seq(version),
-    buildInfoPackage := "net.chwthewke.backups"
+    buildInfoPackage := "$package$"
   )
 
   lazy val $name;format="camel"$ScalariformSettings = scalariformSettings ++ Seq(
