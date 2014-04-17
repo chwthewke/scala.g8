@@ -27,31 +27,39 @@ object $name;format="Camel"$Build extends Build {
     buildInfoPackage := "net.chwthewke.backups"
   )
 
-  lazy val $name;format="camel"$ = Project(
-    id = "$name;format="norm"$",
-    base = file( "." ),
-    settings = Project.defaultSettings ++
-      ScoverageSbtPlugin.instrumentSettings ++
-      scalariformSettings ++
-      $name;format="camel"$BuildInfoSettings ++
-      Seq(
-        name := "$name;format="norm"$",
-        organization := "$organisation$",
-        scalaVersion := "$scalaVersion$",
-        libraryDependencies ++= Seq(
+  lazy val $name;format="camel"$ScalariformSettings = scalariformSettings ++ Seq(
+    ScalariformKeys.preferences := defaultPreferences
+      .setPreference( AlignSingleLineCaseStatements, true )
+      .setPreference( SpaceBeforeColon, true )
+      .setPreference( SpaceInsideParentheses, true )    
+  )
+
+  lazy val $name;format="camel"$Settings = 
+    Project.defaultSettings ++
+    ScoverageSbtPlugin.instrumentSettings ++
+    $name;format="camel"$BuildInfoSettings ++
+    $name;format="camel"$ScalariformSettings ++
+    Seq(
+      organization := "$organisation$",
+      scalaVersion := "$scalaVersion$",
+      libraryDependencies ++= Seq(
           Dependencies.scalatest,
           Dependencies.scalaz ) ++ 
           Dependencies.scalacheck,
         scalacOptions ++= Seq( "-feature", "-deprecation" ),
         unmanagedSourceDirectories in Compile := (scalaSource in Compile).value :: Nil,
         unmanagedSourceDirectories in Test := (scalaSource in Test).value :: Nil,
-        mainClass := Some("$package$.Main"),
-        ScalariformKeys.preferences := defaultPreferences
-          .setPreference( AlignSingleLineCaseStatements, true )
-          .setPreference( SpaceBeforeColon, true )
-          .setPreference( SpaceInsideParentheses, true ),
         EclipseKeys.projectFlavor := EclipseProjectFlavor.Scala,
-        EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Resource,
+        EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Resource
+    )
+
+  lazy val $name;format="camel"$ = Project(
+    id = "$name;format="norm"$",
+    base = file( "." ),
+    settings = $name;format="camel"$Settings ++
+      Seq(
+        name := "$name;format="norm"$",
+        mainClass := Some("$package$.Main"),
         initialCommands := "import $package$"
       )
   )
