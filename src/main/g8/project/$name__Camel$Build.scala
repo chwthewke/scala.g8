@@ -30,7 +30,7 @@ object $name;format="Camel"$Build extends Build {
   )
 
   lazy val $name;format="camel"$Settings = 
-    Project.defaultSettings ++
+    Defaults.coreDefaultSettings ++
     ScoverageSbtPlugin.instrumentSettings ++
     SbtBuildInfo.buildSettings("$package$") ++
     SbtEclipse.buildSettings ++
