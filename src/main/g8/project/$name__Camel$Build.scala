@@ -54,6 +54,7 @@ object $name;format="Camel"$Build extends Build {
     id = "$name;format="norm"$",
     base = file( "." ),
     settings = Defaults.coreDefaultSettings ++
+      sharedSettings ++
       Seq( name := "$name;format="norm"$" )
   ).aggregate(
     $module;format="camel"$
