@@ -2,9 +2,13 @@ name := "$name;format="norm"$-build"
 
 resolvers += Classpaths.sbtPluginReleases
 
+resolvers += Classpaths.sbtPluginSnapshots
+
 resolvers += Resolver.sonatypeRepo("releases")
 
-addSbtPlugin("org.scoverage" %% "sbt-scoverage" % "0.99.7.1")
+resolvers += Resolver.sonatypeRepo("snapshots")
+
+addSbtPlugin("org.scoverage" %% "sbt-scoverage" % "1.0.5-SNAPSHOT")
 
 addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.5.0")
 
