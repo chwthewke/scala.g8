@@ -29,15 +29,18 @@ object $name;format="Camel"$Build extends Build {
       .setPreference( SpaceInsideParentheses, true )    
   )
 
+  lazy val sharedSettings =
+    Seq(
+      organization := "$organisation$",
+      scalaVersion := "$scalaVersion$")
+
   lazy val $name;format="camel"$Settings = 
     Defaults.coreDefaultSettings ++
-    ScoverageSbtPlugin.instrumentSettings ++
     SbtBuildInfo.buildSettings("$package$") ++
     SbtEclipse.buildSettings ++
     $name;format="camel"$ScalariformSettings ++
+    sharedSettings ++
     Seq(
-      organization := "$organisation$",
-      scalaVersion := "$scalaVersion$",
       libraryDependencies ++= Seq(
           Dependencies.scalatest,
           Dependencies.scalaz ) ++ 
