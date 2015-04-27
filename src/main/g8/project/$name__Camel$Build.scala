@@ -9,14 +9,14 @@ import sbtbuildinfo.Plugin._
 object $name;format="Camel"$Build extends Build {
 
   object Dependencies {
-    val scalazVersion = "7.1.0"
+    val scalazVersion = "7.1.1"
 
     val scalaz = "org.scalaz" %% "scalaz-core" % scalazVersion withSources () withJavadoc ()
 
-    val scalatest = "org.scalatest" %% "scalatest" % "2.2.1" % "test" withSources () withJavadoc ()
+    val scalatest = "org.scalatest" %% "scalatest" % "2.2.4" % "test" withSources () withJavadoc ()
 
     val scalacheck = Seq(
-      "org.scalacheck" %% "scalacheck" % "1.11.4" % "test" withSources () withJavadoc (),
+      "org.scalacheck" %% "scalacheck" % "1.12.2" % "test" withSources () withJavadoc (),
       "org.scalaz" %% "scalaz-scalacheck-binding" % scalazVersion % "test" withSources () withJavadoc ()      
     )
 

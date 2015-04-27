@@ -8,7 +8,7 @@ resolvers += Resolver.sonatypeRepo("releases")
 
 resolvers += Resolver.sonatypeRepo("snapshots")
 
-addSbtPlugin("org.scoverage" %% "sbt-scoverage" % "1.0.5-SNAPSHOT")
+addSbtPlugin("org.scoverage" %% "sbt-scoverage" % "1.1.0")
 
 addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.5.0")
 
