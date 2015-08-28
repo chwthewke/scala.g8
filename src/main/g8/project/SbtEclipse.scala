@@ -1,7 +1,7 @@
 import com.typesafe.sbteclipse.plugin.EclipsePlugin.EclipseCreateSrc
 import com.typesafe.sbteclipse.plugin.EclipsePlugin.EclipseKeys
 import com.typesafe.sbteclipse.plugin.EclipsePlugin.EclipseProjectFlavor
-import com.typesafe.sbteclipse.plugin.EclipsePlugin.EclipseTransformerFactory
+import com.typesafe.sbteclipse.core.EclipsePlugin.EclipseTransformerFactory
 import sbt.ProjectRef
 import sbt.State
 import sbt.ThisBuild
