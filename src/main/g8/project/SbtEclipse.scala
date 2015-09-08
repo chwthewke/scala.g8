@@ -13,9 +13,10 @@ import scalaz.syntax.validation._
 object SbtEclipse {
 
   def buildSettings = Seq(
-    EclipseKeys.projectFlavor := EclipseProjectFlavor.Scala,
-    EclipseKeys.createSrc in ThisBuild := EclipseCreateSrc.All,
-    EclipseKeys.classpathTransformerFactories in ThisBuild := Seq(OptionalSources)
+    EclipseKeys.projectFlavor := EclipseProjectFlavor.ScalaIDE,
+    EclipseKeys.classpathTransformerFactories in ThisBuild := Seq(OptionalSources),
+    EclipseKeys.withSource := true,
+    EclipseKeys.withJavadoc := true
   )
 
   object OptionalSources extends EclipseTransformerFactory[RewriteRule] {

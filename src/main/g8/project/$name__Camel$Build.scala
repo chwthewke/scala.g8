@@ -22,6 +22,8 @@ object $name;format="Camel"$Build extends Build {
 
   }
 
+  override def settings = super.settings :+ ( EclipseKeys.skipParents in ThisBuild := false )
+
   lazy val $name;format="camel"$ScalariformSettings = scalariformSettings ++ Seq(
     ScalariformKeys.preferences := defaultPreferences
       .setPreference( AlignSingleLineCaseStatements, true )
@@ -57,7 +59,8 @@ object $name;format="Camel"$Build extends Build {
       Seq(
         name := "$name;format="norm"$",
         mainClass := Some("$package$.Main"),
-        initialCommands := "import $package$"
+        initialCommands := """|import $package$._
+                              |import scalaz._,Scalaz._""".stripMargin
       )
   )
 }
