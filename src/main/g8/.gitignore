@@ -1,6 +1,9 @@
-target
+bin/
+target/
+.cache*
 .idea
 .idea_modules
 .project
 .classpath
 .settings
+
