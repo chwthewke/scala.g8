@@ -71,7 +71,7 @@ object $name;format="Camel"$Build extends Build {
         mainClass := Some("$package$.Main"),
         initialCommands := """|import $package$._
                               |import scalaz._,Scalaz._""".stripMargin,
-        buildInfoObject := "$module;format="camel"$BuildInfo"
+        buildInfoObject := "$module;format="Camel"$BuildInfo"
       )
   )
 }
