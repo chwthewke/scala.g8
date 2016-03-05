@@ -9,15 +9,24 @@ import sbtbuildinfo.Plugin._
 object $name;format="Camel"$Build extends Build {
 
   object Dependencies {
-    val scalazVersion = "7.1.1"
+    val scalazVersion = "7.2.0"
 
     val scalaz = "org.scalaz" %% "scalaz-core" % scalazVersion withSources () withJavadoc ()
 
-    val scalatest = "org.scalatest" %% "scalatest" % "2.2.4" % "test" withSources () withJavadoc ()
+    val scalatest = "org.scalatest" %% "scalatest" % "3.0.0-M15" % "test" withSources () withJavadoc ()
 
     val scalacheck = Seq(
-      "org.scalacheck" %% "scalacheck" % "1.12.2" % "test" withSources () withJavadoc (),
+      "org.scalacheck" %% "scalacheck" % "1.13.0" % "test" withSources () withJavadoc (),
       "org.scalaz" %% "scalaz-scalacheck-binding" % scalazVersion % "test" withSources () withJavadoc ()      
+    )
+
+    val monocleVersion = "1.2.0"
+
+    val monocle = Seq(
+      "com.github.julien-truffaut" %% "monocle-core"    % monocleVersion,
+      "com.github.julien-truffaut" %% "monocle-macro"   % monocleVersion,
+      "com.github.julien-truffaut" %% "monocle-generic" % monocleVersion,
+      "com.github.julien-truffaut" %% "monocle-state"   % monocleVersion
     )
 
   }
@@ -46,6 +55,7 @@ object $name;format="Camel"$Build extends Build {
       libraryDependencies ++= Seq(
           Dependencies.scalatest,
           Dependencies.scalaz ) ++ 
+          Dependencies.monocle ++
           Dependencies.scalacheck,
         scalacOptions ++= Seq( "-feature", "-deprecation" ),
         unmanagedSourceDirectories in Compile := (scalaSource in Compile).value :: Nil,
